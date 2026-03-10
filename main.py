@@ -225,6 +225,10 @@ async def read_root():
     """
     return FileResponse('index.html')
 
+# Vercel serverless function handler
+from mangum import Mangum
+handler = Mangum(app)
+
 if __name__ == "__main__":
     import uvicorn
     # Railway 등 클라우드 환경에서 제공하는 PORT 환경변수 사용
